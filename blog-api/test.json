@@ -1,0 +1,76 @@
+{
+  "delete" : {
+    "tags" : [
+      {
+        "in" : "Posts"
+      }
+    ],
+    "description" : "Deletes post",
+    "parameters" : [
+      {
+        "in" : "headers",
+        "name" : "x-api-key",
+        "required" : true,
+        "schema" : {
+          "type" : "object",
+          "properties" : {
+            "success" : {
+              "type" : "string",
+              "example" : "blog-xxxxx"
+            }
+          }
+        }
+      },
+      {
+        "in" : "headers",
+        "name" : "Authorization",
+        "required" : true,
+        "schema" : {
+          "type" : "object",
+          "properties" : {
+            "success" : {
+              "type" : "string",
+              "example" : "xxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          }
+        }
+      },
+      {
+        "in" : "path",
+        "name" : "postId",
+        "required" : true,
+        "schema" : {
+          "type" : "object",
+          "properties" : {
+            "success" : {
+              "type" : "string",
+              "example" : "xxxxx"
+            }
+          }
+        }
+      }
+    ],
+    "responses" : {
+      "200" : {
+        "description" : "Response for successfully deleted post",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "success" : {
+                  "type" : "boolean",
+                  "example" : true
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Post deleted successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
